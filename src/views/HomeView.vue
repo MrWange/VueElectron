@@ -32,6 +32,7 @@
               <el-col :span="3" @click="data.drawer=!data.drawer">武汉</el-col>
               <el-col :span="3" @click="data.tvs = !data.tvs">视频</el-col>
               <el-col :span="3" @click="data.centerDialogVisible=!data.centerDialogVisible">图片</el-col>
+              <el-col :span="3" @click="routerview('/music')">音乐</el-col>
             </el-row>
           </div>
           <div class="city-sunnday">
@@ -195,6 +196,10 @@ export default ({
         console.log("功能暂时未开发")
       }
     }
+    // 跳转页面
+    const routerview = function(path){
+      router.push(path)
+    }
     // 提交表单
     const onSubmit = function(){
       if(form.mysterious_pwd == data.mysterious){
@@ -216,7 +221,7 @@ export default ({
       tv()
     })
     return{
-      data,sunnday,imglist_mei,tv,form,onSubmit,search_fun
+      data,sunnday,imglist_mei,tv,form,onSubmit,search_fun,routerview
     }
   },
 })
